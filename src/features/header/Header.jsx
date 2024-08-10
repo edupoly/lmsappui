@@ -56,10 +56,7 @@ function Header() {
                             {(token && role === "admin") ? (
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/customer">Matches</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/prematchboard">Start Match</Link>
+                                        <Link className="nav-link" to="/viewallcourses">View Courses</Link>
                                     </li>
                                 </>
                             ) : role === "user" ? (
