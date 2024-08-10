@@ -40,7 +40,7 @@ const Signup = () => {
         // Simulate signup process
         setSubmitting(false);
         if (location.pathname === '/signup') {
-            // usersignupFn(values)
+            usersignupFn(values)
             navigate('/login'); // Navigate to /login after user signup
         } else if (location.pathname === '/dashboard/signup') {
             navigate('/dashboard'); // Navigate to /dashboard after admin signup
