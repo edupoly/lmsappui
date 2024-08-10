@@ -4,12 +4,13 @@ import * as Yup from 'yup';
 import { useNavigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
+import { useUsersignupMutation } from '../../services/usersignup.service';
 
 const Signup = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [showPassword, setShowPassword] = useState(false);
-
+    const [usersignupFn] = useUsersignupMutation()
     const initialValues = {
         email: '',
         password: '',
@@ -39,6 +40,7 @@ const Signup = () => {
         // Simulate signup process
         setSubmitting(false);
         if (location.pathname === '/signup') {
+            // usersignupFn(values)
             navigate('/login'); // Navigate to /login after user signup
         } else if (location.pathname === '/dashboard/signup') {
             navigate('/dashboard'); // Navigate to /dashboard after admin signup
