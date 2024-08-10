@@ -1,70 +1,106 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+
+# LMS App UI
+
+This repository is for the frontend of the **EduPoly LMS App**. It includes a React-based application that leverages Redux for state management, Bootstrap for styling, and WebSocket for real-time updates.
+
+<div align="center" style="margin:4px">
+  <img src="https://edupoly.in/common/assets/edupoly-logo-light.png" width="300px">
+</div>
+
+## Project Structure
+
+The project is organized as follows:
+
+- **`/src`**: Contains the source code for the application.
+  - **`components`**: Contains reusable UI components.
+  - **`features`**: Contains feature-specific code, such as slices, APIs, and feature components.
+  - **`common`**: Contains shared components and utilities.
+  - **`services`**: Contains API service definitions using `@reduxjs/toolkit/query`.
+  - **`theme`**: Contains theme-related context and styles.
+  
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: Install Node.js (v14 or later).
+- **npm**: Node package manager (npm) should be installed.
+
+## Installation
+
+To install the project dependencies, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/lmsappui.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd lmsappui
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts:
 
-### `npm start`
+- **`npm start`**: Runs the app in development mode.
+- **`npm run build`**: Builds the app for production.
+- **`npm test`**: Launches the test runner.
+- **`npm run eject`**: Ejects the app configuration (not recommended unless necessary).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project uses the following main dependencies:
 
-### `npm test`
+- **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
+- **[Redux Toolkit](https://redux-toolkit.js.org/)**: The official, recommended way to write Redux logic.
+- **[React Redux](https://react-redux.js.org/)**: Official React bindings for Redux.
+- **[React Router DOM](https://reactrouter.com/)**: Declarative routing for React applications.
+- **[Bootstrap](https://getbootstrap.com/)**: Frontend component library for responsive design.
+- **[MDB React UI Kit](https://mdbootstrap.com/docs/react/)**: Material Design Bootstrap components.
+- **[Formik](https://formik.org/)**: Form handling in React.
+- **[Yup](https://github.com/jquense/yup)**: JavaScript schema builder for value parsing and validation.
+- **[Socket.IO Client](https://socket.io/)**: Enables real-time, bidirectional, and event-based communication.
+- **[Bootstrap Icons](https://icons.getbootstrap.com/)**: Free, high-quality, open-source icon library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+After installation, you can start the development server by running:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will be available at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- **State Management**: Handled using Redux Toolkit.
+- **Real-Time Updates**: Enabled using WebSockets (Socket.IO).
+- **Responsive Design**: Leveraging Bootstrap for responsive UI components.
+- **Form Handling**: Managed with Formik and Yup for validation.
+- **Theme Support**: Supports both light and dark themes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sai Babu Dasari<br>Harsha Vignyan Ayaluri<br>Murari
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you have any questions or suggestions, feel free to reach out.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
