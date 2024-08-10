@@ -12,7 +12,7 @@ const getLocalStorageValues = () => {
 const initialState = getLocalStorageValues();
 
 const loginSlice = createSlice({
-    name: 'auth',
+    name: 'login',
     initialState,
     reducers: {
         setUser: (state, action) => {

@@ -1,10 +1,18 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../../services/login.service';
+import { setUser } from './loginSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [login] = useLoginMutation();
+
     const initialValues = {
         username: '',
         password: '',
@@ -15,8 +23,24 @@ const Login = () => {
         password: Yup.string().required('Password is required'),
     });
 
-    const onSubmit = (values, { setSubmitting }) => {
-        console.log('Form data', values);
+    const onSubmit = async (values, { setSubmitting, setErrors }) => {
+        try {
+            const response = await login(values).unwrap();
+            dispatch(setUser({
+                username: response.username,
+                token: response.token,
+                role: response.role // Capture the role from the response
+            }));
+            
+            // Redirect based on user role
+            if (response.role === 'admin') {
+                navigate('/dashboard');
+            } else if (response.role === 'user') {
+                navigate('/dashboard'); // Or any other user-specific route
+            }
+        } catch (error) {
+            setErrors({ server: error.data.message });
+        }
         setSubmitting(false);
     };
 
@@ -29,7 +53,7 @@ const Login = () => {
                     validationSchema={validationSchema}
                     onSubmit={onSubmit}
                 >
-                    {({ isSubmitting }) => (
+                    {({ isSubmitting, errors }) => (
                         <Form>
                             <div className="mb-3">
                                 <label htmlFor="username" className="form-label">Username</label>
@@ -53,6 +77,7 @@ const Login = () => {
                                 />
                                 <ErrorMessage name="password" component="div" className="text-danger mt-1" />
                             </div>
+                            {errors.server && <div className="text-danger mb-3">{errors.server}</div>}
                             <div className="d-grid">
                                 <p className="text-center">If you don't have an account <Link to="/signup">Signup</Link></p>
                                 <button 

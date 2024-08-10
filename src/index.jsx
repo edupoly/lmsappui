@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
-import Header from './features/header/Header';
 import Login from './features/login/login';
 import Signup from './features/signup/signup';
+import Dashboard from './features/dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />
       }
     ]
   }
