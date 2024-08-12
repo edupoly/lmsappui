@@ -79,7 +79,7 @@ const Login = () => {
                             </div>
                             {errors.server && <div className="text-danger mb-3">{errors.server}</div>}
                             <div className="d-grid">
-                                <p className="text-center">If you don't have an account <Link to="/adminsignup">Signup</Link></p>
+                                <p className="text-center">If you don't have an account <Link to="/signup">Signup</Link></p>
                                 <button 
                                     type="submit" 
                                     className="btn btn-primary btn-block" 

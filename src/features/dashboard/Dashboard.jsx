@@ -12,7 +12,6 @@ function Dashboard() {
     return (
         <div className="dashboard-container">
             {state.role === "admin" ? <Admindashboard /> : <Userdashboard />}
-            <Outlet />
         </div>
     );
 }

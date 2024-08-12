@@ -46,7 +46,7 @@ function Header() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <Link className="navbar-brand mt-2 mt-lg-0" to="/">
                             <img
-                                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                                src="https://edupoly.in/common/assets/edupoly-logo-light.png"
                                 height="15"
                                 alt="MDB Logo"
                                 loading="lazy"
@@ -56,19 +56,19 @@ function Header() {
                             {(token && role === "admin") ? (
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/viewallcourses">View Courses</Link>
+                                        <Link className="nav-link" to="/viewtopics">View Topics</Link>
                                     </li>
                                 </>
                             ) : role === "user" ? (
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/viewallcourses">View Courses</Link>
+                                        <Link className="nav-link" to="/viewtopics">View Topics</Link>
                                     </li>
                                 </>
                             ) : (
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/viewallcourses">View Courses</Link>
+                                        <Link className="nav-link" to="/viewtopics">View Topics</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/login">Login</Link>

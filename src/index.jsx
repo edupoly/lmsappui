@@ -11,6 +11,8 @@ import { Provider } from 'react-redux';
 import Login from './features/login/login';
 import Signup from './features/signup/signup';
 import Dashboard from './features/dashboard/Dashboard';
+import Topics from './features/courses/Topics';
+import Createcohort from './features/addcourse/Createcohort';
 
 const router = createBrowserRouter([
   {
@@ -27,11 +29,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />
+        element: <Dashboard />,
+        children:[
+          {
+            path:"/dashboard/createcohort",
+            element: <Createcohort></Createcohort>
+          },
+          {
+            path: '/dashboard/signup',
+            element: <Signup></Signup>
+          },
+        ]
       },
       {
-        path: '/dashboard/signup',
-        element: <Signup></Signup>
+        path: '/viewtopics',
+        element: <Topics></Topics>
       }
     ]
   }
