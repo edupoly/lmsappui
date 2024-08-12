@@ -1,0 +1,19 @@
+.nav-item {
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-item:hover {
+    background-color: #f8f9fa; /* Change to your desired background color on hover */
+}
+
+.nav-link {
+    color: #000; /* Default color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    padding: 10px; /* Adds some padding to make the hover area larger */
+    display: block; /* Ensures the link takes up the full width of the list item */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Change text color on hover */
+}

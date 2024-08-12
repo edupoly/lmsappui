@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Sidebar.css'; // Import the separate CSS file
 
 function Sidebar() {
     return (
@@ -18,8 +19,8 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="./viewcohorts" className="nav-link">
-                            View Cohorts
+                        <Link to="./viewallcohorts" className="nav-link">
+                            View All Cohorts
                         </Link>
                     </li>
                 </ul>

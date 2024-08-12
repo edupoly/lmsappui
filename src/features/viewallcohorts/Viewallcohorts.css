@@ -1,0 +1,64 @@
+/* Viewallcohorts.css */
+
+/* Card styling */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Adds a slight lift effect */
+}
+
+.card-img-top {
+    /* Removed the border line after the image */
+}
+
+/* Card body styling */
+.card-body {
+    padding: 1rem;
+}
+
+/* Title styling */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Text styling */
+.card-text {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Tag styling */
+.card-tags {
+    margin-top: 1rem;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Apply colors using nth-child */
+.card-tag:nth-child(1) { background-color: #e34f26; } /* Color 1 */
+.card-tag:nth-child(2) { background-color: #264de4; } /* Color 2 */
+.card-tag:nth-child(3) { background-color: #f7df1e; } /* Color 3 */
+.card-tag:nth-child(4) { background-color: #61dafb; } /* Color 4 */
+.card-tag:nth-child(5) { background-color: #4caf50; } /* Color 5 */
+.card-tag:nth-child(6) { background-color: #ff5722; } /* Color 6 */
+.card-tag:nth-child(7) { background-color: #9c27b0; } /* Color 7 */
+.card-tag:nth-child(8) { background-color: #3f51b5; } /* Color 8 */
+.card-tag:nth-child(9) { background-color: #00bcd4; } /* Color 9 */
+.card-tag:nth-child(10) { background-color: #8bc34a; } /* Color 10 */

@@ -12,7 +12,8 @@ import Login from './features/login/login';
 import Signup from './features/signup/signup';
 import Dashboard from './features/dashboard/Dashboard';
 import Topics from './features/courses/Topics';
-import Createcohort from './features/addcourse/Createcohort';
+import Createcohort from './features/addcohort/Createcohort';
+import Viewallcohorts from './features/viewallcohorts/Viewallcohorts';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
           {
             path: '/dashboard/signup',
             element: <Signup></Signup>
+          },
+          {
+            path: '/dashboard/viewallcohorts',
+            element: <Viewallcohorts></Viewallcohorts>
           },
         ]
       },

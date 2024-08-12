@@ -1,21 +1,11 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import { useCreatecohortApiMutation } from '../../services/createcohort.service';
-import FormCard from './FormCard';
-import TextInput from './TextInput';
-import FileInput from './FileInput';
-import TagsInput from './TagsInput';
-import SubmitButton from './SubmitButton';
+import { useCreatecohortApiMutation } from '../../services/createcohorts.service';
+import MultiInput from './MultiInput'; // Import the custom MultiInput component
 
-const initialValues = {
-    cohortname: '',
-    cohortid: '',
-    cohorttags: [''],
-    cohortpic: null,
-};
-
+// Validation schema for the form
 const validationSchema = Yup.object({
     cohortname: Yup.string().required('Required'),
     cohortid: Yup.string().required('Required'),
@@ -23,10 +13,20 @@ const validationSchema = Yup.object({
     cohortpic: Yup.mixed().required('A cohort picture is required'),
 });
 
-function Createcohort() {
+// Initial values for the form fields
+const initialValues = {
+    cohortname: '',
+    cohortid: '',
+    cohorttags: [],
+    cohortpic: null,
+};
+
+// Main component for creating a cohort
+function CreateCohort() {
     const navigate = useNavigate();
     const [createcohortFn] = useCreatecohortApiMutation();
 
+    // Handle form submission
     const onSubmit = (values) => {
         const formData = new FormData();
         formData.append('cohortname', values.cohortname);
@@ -37,34 +37,77 @@ function Createcohort() {
             formData.append(`cohorttags[${index}]`, tag);
         });
 
+        formData.append('createdAt', new Date().toISOString());
+
         createcohortFn(formData)
             .then((response) => {
                 console.log('Cohort created successfully:', response);
                 navigate("/dashboard");
             })
             .catch((error) => {
-                console.error('Error creating cohort:', error);
+                console.error('Error creating cohort:', error.response ? error.response.data : error.message);
             });
     };
 
     return (
-        <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-            encType="multipart/form-data"
-        >
-            {({ values, setFieldValue }) => (
-                <FormCard title="Create a New Cohort">
-                    <TextInput name="cohortname" label="Cohort Name" />
-                    <TextInput name="cohortid" label="Cohort ID" />
-                    <TagsInput name="cohorttags" />
-                    <FileInput name="cohortpic" setFieldValue={setFieldValue} />
-                    <SubmitButton />
-                </FormCard>
-            )}
-        </Formik>
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-8 col-lg-6">
+                    <div className="card shadow-sm p-4">
+                        <h1 className="mb-4 text-center">Create a New Cohort</h1>
+                        <Formik
+                            initialValues={initialValues}
+                            validationSchema={validationSchema}
+                            onSubmit={onSubmit}
+                            encType="multipart/form-data"
+                        >
+                            {({ values, setFieldValue }) => (
+                                <Form>
+                                    <div className="mb-3">
+                                        <label className="form-label">Cohort Name</label>
+                                        <Field type="text" name="cohortname" className="form-control" />
+                                        <ErrorMessage name="cohortname" component="div" className="text-danger" />
+                                    </div>
+
+                                    <div className="mb-3">
+                                        <label className="form-label">Cohort ID</label>
+                                        <Field type="text" name="cohortid" className="form-control" />
+                                        <ErrorMessage name="cohortid" component="div" className="text-danger" />
+                                    </div>
+
+                                    <div className="mb-3">
+                                        <label className="form-label">Cohort Tags</label>
+                                        <Field
+                                            name="cohorttags"
+                                            component={MultiInput}
+                                        />
+                                        <ErrorMessage name="cohorttags" component="div" className="text-danger" />
+                                    </div>
+
+                                    <div className="mb-3">
+                                        <label className="form-label">Cohort Picture</label>
+                                        <input
+                                            type="file"
+                                            name="cohortpic"
+                                            className="form-control"
+                                            onChange={(event) => {
+                                                setFieldValue('cohortpic', event.currentTarget.files[0]);
+                                            }}
+                                        />
+                                        <ErrorMessage name="cohortpic" component="div" className="text-danger" />
+                                    </div>
+
+                                    <div className="text-center">
+                                        <button type="submit" className="btn btn-success">Submit</button>
+                                    </div>
+                                </Form>
+                            )}
+                        </Formik>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 
-export default Createcohort;
+export default CreateCohort;
