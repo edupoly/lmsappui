@@ -17,6 +17,11 @@ function Sidebar() {
                             Create Cohort
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="./viewcohorts" className="nav-link">
+                            View Cohorts
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
