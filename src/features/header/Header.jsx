@@ -90,7 +90,7 @@ function Header() {
                                         aria-expanded="false"
                                     >
                                         <img
-                                            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                                            src="https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE="
                                             className="rounded-circle"
                                             height="25"
                                             alt="Black and White Portrait of a Man"
