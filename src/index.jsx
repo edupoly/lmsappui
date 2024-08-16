@@ -14,6 +14,8 @@ import Dashboard from './features/dashboard/Dashboard';
 import Topics from './features/courses/Topics';
 import Createcohort from './features/addcohort/Createcohort';
 import Viewallcohorts from './features/viewallcohorts/Viewallcohorts';
+import Adduserstocohort from './features/adduserstocohort/Adduserstocohort';
+import Viewusers from './features/viewusers/Viewusers';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
             path: '/dashboard/viewallcohorts',
             element: <Viewallcohorts></Viewallcohorts>
           },
+          {
+            path: '/dashboard/:cohortId/addusers',
+            element: <Adduserstocohort></Adduserstocohort>
+          },
+          {
+            path: '/dashboard/viewusers',
+            element: <Viewusers />
+          }
         ]
       },
       {

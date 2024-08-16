@@ -6,6 +6,8 @@ import loginReducer from '../features/login/loginSlice';
 import { adminSignUpApi } from '../services/adminsignup.service';
 import { createcohortApi } from '../services/createcohorts.service';
 import { getcohortsApi } from '../services/getcohorts.service';
+import { getusersofacohortApi } from '../services/getusersofacohort.service';
+import { adduserstocohortApi } from '../services/adduserstocohort.service';
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +17,8 @@ export const store = configureStore({
         [adminSignUpApi.reducerPath]: adminSignUpApi.reducer,
         [createcohortApi.reducerPath]: createcohortApi.reducer,
         [getcohortsApi.reducerPath]: getcohortsApi.reducer,
+        [getusersofacohortApi.reducerPath]: getusersofacohortApi.reducer,
+        [adduserstocohortApi.reducerPath]: adduserstocohortApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
@@ -22,7 +26,9 @@ export const store = configureStore({
             .concat(userSignUpApi.middleware)
             .concat(adminSignUpApi.middleware)
             .concat(createcohortApi.middleware)
-            .concat(getcohortsApi.middleware),
+            .concat(getcohortsApi.middleware)
+            .concat(getusersofacohortApi.middleware)
+            .concat(adduserstocohortApi.middleware),
 });
 
 setupListeners(store.dispatch);

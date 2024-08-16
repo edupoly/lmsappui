@@ -23,6 +23,11 @@ function Sidebar() {
                             View All Cohorts
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="./viewusers" className="nav-link">
+                            View users
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
