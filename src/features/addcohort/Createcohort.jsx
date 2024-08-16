@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { useCreatecohortApiMutation } from '../../services/createcohorts.service';
 import MultiInput from './MultiInput'; // Import the custom MultiInput component
+import { Link } from 'react-router-dom';
 
 // Validation schema for the form
 const validationSchema = Yup.object({
@@ -51,7 +52,10 @@ function CreateCohort() {
 
     return (
         <div className="container mt-5">
-            <div className="row justify-content-center">
+            <Link to=".." className="btn btn-outline-primary d-inline-flex align-items-center mb-4">
+                <i className="bi bi-arrow-left me-2"></i> Back
+            </Link>
+            <div className="row justify-content-center vh-100">
                 <div className="col-md-8 col-lg-6">
                     <div className="card shadow-sm p-4">
                         <h1 className="mb-4 text-center">Create a New Cohort</h1>

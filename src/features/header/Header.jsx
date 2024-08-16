@@ -47,29 +47,29 @@ function Header() {
                         <Link className="navbar-brand mt-2 mt-lg-0" to="/">
                             <img
                                 src="https://edupoly.in/common/assets/edupoly-logo-light.png"
-                                height="15"
-                                alt="MDB Logo"
+                                height="35"
+                                alt="Edupoly Logo"
                                 loading="lazy"
                             />
                         </Link>
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             {(token && role === "admin") ? (
                                 <>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link className="nav-link" to="/viewtopics">View Topics</Link>
-                                    </li>
+                                    </li> */}
                                 </>
                             ) : role === "user" ? (
                                 <>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link className="nav-link" to="/viewtopics">View Topics</Link>
-                                    </li>
+                                    </li> */}
                                 </>
                             ) : (
                                 <>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link className="nav-link" to="/viewtopics">View Topics</Link>
-                                    </li>
+                                    </li> */}
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/login">Login</Link>
                                     </li>

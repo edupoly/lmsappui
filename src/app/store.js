@@ -8,6 +8,8 @@ import { createcohortApi } from '../services/createcohorts.service';
 import { getcohortsApi } from '../services/getcohorts.service';
 import { getusersofacohortApi } from '../services/getusersofacohort.service';
 import { adduserstocohortApi } from '../services/adduserstocohort.service';
+import { addcohortstouserApi } from '../services/addcohortstouser.service';
+import { getuseronsearchApi } from '../services/getuseronsearch.service';
 
 export const store = configureStore({
     reducer: {
@@ -19,6 +21,8 @@ export const store = configureStore({
         [getcohortsApi.reducerPath]: getcohortsApi.reducer,
         [getusersofacohortApi.reducerPath]: getusersofacohortApi.reducer,
         [adduserstocohortApi.reducerPath]: adduserstocohortApi.reducer,
+        [addcohortstouserApi.reducerPath]: addcohortstouserApi.reducer,
+        [getuseronsearchApi.reducerPath]: getuseronsearchApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
@@ -28,7 +32,9 @@ export const store = configureStore({
             .concat(createcohortApi.middleware)
             .concat(getcohortsApi.middleware)
             .concat(getusersofacohortApi.middleware)
-            .concat(adduserstocohortApi.middleware),
+            .concat(adduserstocohortApi.middleware)
+            .concat(addcohortstouserApi.middleware)
+            .concat(getuseronsearchApi.middleware),
 });
 
 setupListeners(store.dispatch);

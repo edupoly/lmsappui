@@ -58,6 +58,9 @@ function Viewallcohorts() {
 
     return (
         <div className="container mt-5">
+            <Link to=".." className="btn btn-outline-primary d-inline-flex align-items-center mb-4">
+                <i className="bi bi-arrow-left me-2"></i> Back
+            </Link>
             <div className="row">
                 <div className="col-md-12 mb-4">
                     <div className="d-flex mb-3">

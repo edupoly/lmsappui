@@ -15,7 +15,7 @@ import Topics from './features/courses/Topics';
 import Createcohort from './features/addcohort/Createcohort';
 import Viewallcohorts from './features/viewallcohorts/Viewallcohorts';
 import Adduserstocohort from './features/adduserstocohort/Adduserstocohort';
-import Viewusers from './features/viewusers/Viewusers';
+import Addcohortstouser from './features/viewusers/addcohortstouser';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/dashboard/viewusers',
-            element: <Viewusers />
+            element: <Addcohortstouser />
           }
         ]
       },
